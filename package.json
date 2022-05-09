@@ -7,7 +7,7 @@
     "start": "nodemon ./api/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Maysa Pereira",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
