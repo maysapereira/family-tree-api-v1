@@ -25,6 +25,15 @@ class MembersController {
         }
     }
 
+    static async createMember(req, res){
+        const newMember = req.body
+        try {
+            const createNewMember = await database.Members.create(newMember)
+            return res.status(200).json(createNewMember)
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
 }
 
 module.exports = MembersController
