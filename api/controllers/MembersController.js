@@ -34,6 +34,27 @@ class MembersController {
             return res.status(500).json(error.message)
         }
     }
+
+    static async updateMember(req, res){
+        const { id }  = req.params
+        const newData = req.body
+        try {
+                await database.Members.update(newData,  {
+                    where: {
+                        id: Number(id)
+                    }
+                })
+                const updatedMember = await database.Members.findOne(
+                    {
+                        where: {
+                            id: Number(id)
+                        }
+                    })
+                return res.status(200).json(updatedMember)
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
 }
 
 module.exports = MembersController
