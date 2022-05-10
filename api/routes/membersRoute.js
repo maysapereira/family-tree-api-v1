@@ -7,5 +7,6 @@ router.get('/members', MembersController.searchMembers)
 router.get('/members/:id', MembersController.searchMember)
 router.post('/members', MembersController.createMember)
 router.put('/members/:id', MembersController.updateMember)
+router.delete('/members/:id', MembersController.deleteMember)
 
 module.exports = router
